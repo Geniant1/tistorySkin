@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="ko">
+<!--
+    친효스킨 Ver 1.16
+    제작자 : 친절한효자손
+    블로그 : https://rgy0409.tistory.com
+    e-mail : rgy0409@gmail.com
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="[##_blogger_##]">
+    <meta name="description" content="[##_desc_##]">
+    <meta name="generator" content="친절한효자손">
+    <!-- 위의 메타태그는 스킨제작자 표시 입니다. 변경하지 마세요 -->
+    <title>[##_page_title_##]</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic">
+    <script src="./images/jquery-1.12.3.js"></script>
+    <!--[if lt IE 9]>
+        <script src="./images/html5shiv-3.7.3.min.js"></script>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- 구글 애드센스 승인 코드 시작 -->
+    <!-- 여기를 지우고 애드센스 코드를 넣으세요 -->
+    <!-- 구글 애드센스 승인 코드 끝-->
+
+    <!-- 애드센스 AMP head 코드 시작 -->
+    <!-- 여기를 지우고 AMP 코드를 넣으세요 -->
+    <!-- 애드센스 AMP head 코드 끝 -->
+
+    <script>
+        $(document).ready(function() {
+
+            // TOP 버튼 //
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#topBtn').fadeIn();
+                } else {
+                    $('#topBtn').fadeOut();
+                }
+            });
+
+            $(".rgyTop").click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500);
+                return false;
+            });
+
+            // 모바일 슬라이드 버튼 //
+            $(".mobile-btn").click(function() {
+                $(".menu").stop().slideToggle();
+            });
+
+            // 카테고리 NEW 아이콘 변경 //
+            $('img[alt="N"]').each(function() {
+                $(this).replaceWith('<span class="rgy-category-new">N</span>');
+            });
+
+            // a href='#' 클릭 무시 스크립트
+            $('a[href="#"]').click(function(ignore) {
+                ignore.preventDefault();
+            });
+        });
+    </script>
+    
+    <!-- 애드센스 인피드 광고 -->
+    <script>
+        var chInfeed = 0;
+        var chInfeedAdSenseShow = 1; // 0 = 인피드광고 적용, 1 = 인피드광고 비적용
+        var chInfeedAdSenseInsert = 5; // 인피드광고 적용 개수
+        var chInfeedAdSense = '<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout="image-side" data-ad-layout-key="-g3-p+2v-ip+xc" data-ad-client="●" data-ad-slot="■"></ins>';
+    </script>
+
+    <!-- 유튜브 반응형 스크립트 -->
+    <script type="text/javascript">
+        $(window).resize(function() {
+            resizeYoutube();
+        });
+        $(function() {
+            resizeYoutube();
+        });
+
+        function resizeYoutube() {
+            $("iframe").each(function() {
+                if (/^https?:\/\/www.youtube.com\/embed\//g.test($(this).attr("src"))) {
+                    $(this).css("width", "100%");
+                    $(this).css("height", Math.ceil(parseInt($(this).css("width")) * 480 / 854) + "px");
+                }
+            });
+        }
+    </script>
+
+    <!-- 카카오톡 공유 스크립트 -->
+    <script>
+        function ShareKakaoTalk() {
+            Kakao.Link.sendScrap({
+                requestUrl: location.href
+            });
+        };
+    </script>
+</head>
+
+<body id="[##_body_id_##]">
+
+    <!-- 애드센스 AMP body 코드 시작 -->
+    <!-- 여기를 지우시고 코드를 넣으세요! -->
+    <!-- 애드센스 AMP body 코드 시작 -->
+
+    <s_t3>
+
+        <header>
+            <!-- 블로그 타이틀 시작 -->
+            <div class="blog-title">
+                <h1><a href="[##_blog_link_##]">[##_title_##]</a></h1>
+            </div>
+            <!-- 블로그 타이틀 끝 -->
+
+            <!-- 모바일 카테고리 버튼 시작 -->
+            <div class="mobile-category">
+                <a href="#rgyCategory"><i class="fas fa-bookmark"></i></a>
+            </div>
+            <!-- 모바일 카테고리 버튼 끝 -->
+
+            <!-- 모바일 메뉴버튼 시작 -->
+            <div class="mobile-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="menu">
+                <div class="search">
+                    <s_search>
+                        <input type="text" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
+                        <input id="submit" value="" type="button" onclick="[##_search_onclick_submit_##]" class="submit"><label for="submit"><i class="fas fa-search" title="검색"></i></label>
+                    </s_search>
+                </div>
+                <div class="button">
+                    <nav>
+                        <ul>
+                            <li><a href="/" title="홈으로"><i class="fas fa-home"></i></a></li>
+                            <li><a href="/category" title="전체글"><i class="fas fa-folder-open"></i></a></li>
+                            <li><a href="/guestbook" title="방명록"><i class="fas fa-book-reader"></i></a></li>
+                            <li><a href="/admin/entry/post" title="글쓰기"><i class="fas fa-pen-nib"></i></a></li>
+                            <li><a href="/manage" title="관리자"><i class="fas fa-wrench"></i></a></li>
+                            <li><a href="#" class="tab_login" id="tab_login_toggle" onclick="fnLoginToggle();"></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- 모바일 메뉴버튼 끝 -->
+        </header>
+
+        <!-- 최상단 빈공간 시작 -->
+        <div id="topEmpty"></div>
+        <!-- 최상단 빈공간 끝 -->
+
+        <!-- 최상단 애드센스 시작 -->
+        <!--<div id="topAdss">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle" style="display:block;" data-ad-client="●" data-ad-slot="■" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>-->
+        <!-- 최상단 애드센스 끝 -->
+
+
+        <!-- 콘테이너: 사이드바+본문 시작 -->
+        <div id="container">
+
+            <!-- 콘텐츠 영역 시작 -->
+            <div id="contents">
+
+                <!-- 보호글 시작 -->
+                <s_article_protected>
+                    <div class="entryProtected">
+                        <h2><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h2>
+                        <span class="date">[##_article_rep_date_##]</span>
+                        <p class="entryProtected_txt">보호되어 있는 글입니다. 내용을 보시려면 비밀번호를 입력하세요.</p>
+                        <p class="entryProtected_btn">
+                            <label for="[##_article_password_##]">비밀번호 :</label>
+                            <input type="password" maxlength="16" id="[##_article_password_##]" name="[##_article_password_##]" value="" onkeydown="if (event.keyCode == 13)[##_article_dissolve_##]" class="entryProtected_password">
+                            <input type="button" value="입력" onclick="[##_article_dissolve_##]" class="entryProtected_submit">
+                        </p>
+                    </div>
+                </s_article_protected>
+                <!-- 보호글 끝 -->
+
+                <!-- 검색결과 시작 -->
+                <s_list>
+                    <div class="searchList">
+                        <h3><span class="search-kwd">[##_list_conform_##]</span> → <span class="search-cnt">([##_list_count_##])</span>건</h3>
+                    </div>
+                </s_list>
+                <!-- 검색결과 끝 -->
+
+                <!-- 공지사항 시작 -->
+                <s_notice_rep>
+                    <div class="entryNotice">
+                        <div class="titleWrap">
+                            <h2><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></h2>
+                            <span class="date"> [##_notice_rep_date_##]</span>
+                        </div>
+                        <div class="article">
+                            [##_notice_rep_desc_##]
+                        </div>
+                    </div>
+                </s_notice_rep>
+                <!-- 공지사항 끝 -->
+
+                <!-- 방명록 시작 -->
+                <s_guest>
+                    <div class="guest">
+                        <div class="guest-title">
+                            <h3>방명록</h3>
+                        </div>
+                        <s_guest_input_form>
+                            <div class="guestWrite">
+                                <s_guest_member>
+                                    <s_guest_form>
+                                        <div class="guest3-options">
+                                            <div>
+                                                <label for="name"></label>
+                                                <input type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]" placeholder="이름" onfocus="this.placeholder=''" onblur="this.placeholder='이름'">
+                                            </div>
+                                            <div>
+                                                <label for="password"></label>
+                                                <input type="password" maxlength="8" name="[##_guest_input_password_##]" value="[##_guest_password_##]" placeholder="비밀번호" onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호'">
+                                            </div>
+                                            <div>
+                                                <label for="homepage"></label>
+                                                <input type="text" name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]">
+                                            </div>
+                                        </div>
+                                    </s_guest_form>
+                                    <div class="guestSecretWrap">
+                                        <input type="checkbox" id="secret" name="secret" class="checkbox" value="1"><label for="secret"></label><span class="secret">비밀글</span><span class="rgyGuestSecretCheck">잠깐! 비밀로 남겨야 할 만한 내용인가요? 그렇다면 차라리 이메일을 보내주시기 바랍니다.</span>
+                                    </div>
+                                </s_guest_member>
+                                <div>
+                                    <textarea name="[##_guest_textarea_body_##]" cols="50" rows="6"></textarea>
+                                </div>
+                                <div>
+                                    <input class="guestBtn" type="submit" value="글남기기" onclick="[##_guest_onclick_submit_##]">
+                                </div>
+                                <div class="rgy-empty"></div>
+                            </div>
+                        </s_guest_input_form>
+
+                        <s_guest_container>
+                            <div class="guestList">
+                                <ol>
+                                    <s_guest_rep>
+                                        <li id='[##_guest_rep_id_##]'>
+                                            <div class="rgy-rewrite-window">
+                                                <div class="[##_guest_rep_class_##]">
+                                                    <div class="rgy-rewrite-window-top">
+                                                        <div class="rgy-rewrite-info">
+                                                            <span class="name">[##_guest_rep_name_##]</span>
+                                                            <span class="date"> [##_guest_rep_date_##]</span>
+                                                        </div>
+                                                    </div>
+                                                    <p>[##_guest_rep_desc_##]</p>
+                                                    <div class="re-control">
+                                                        <div class="re-btn">
+                                                            <a href="#" onclick="[##_guest_rep_onclick_delete_##]" class="modify">
+                                                                <span>수정/삭제</span>
+                                                            </a>
+                                                            <a href="#" onclick="[##_guest_rep_onclick_reply_##]" class="write">
+                                                                <span>답글쓰기</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <s_guest_reply_container>
+                                                <ul>
+                                                    <s_guest_reply_rep>
+                                                        <li id='[##_guest_rep_id_##]'>
+                                                            <div class="rgy-rewrite-window rgy-rewrite-window2">
+                                                                <div class="rgy-div-re-icon"><i class="fa fa-reply"></i></div>
+                                                                <div class="[##_guest_rep_class_##]">
+                                                                    <div class="rgy-rewrite-info">
+                                                                        <span class="name">[##_guest_rep_name_##]</span>
+                                                                        <span class="date"> [##_guest_rep_date_##]</span>
+                                                                    </div>
+                                                                    <p>[##_guest_rep_desc_##]</p>
+                                                                    <span class="re-control">
+                                                                        <div class="re-btn">
+                                                                            <a href="#" onclick="[##_guest_rep_onclick_delete_##]">
+                                                                                <span>수정/삭제</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </s_guest_reply_rep>
+                                                </ul>
+                                            </s_guest_reply_container>
+                                        </li>
+                                    </s_guest_rep>
+                                </ol>
+                            </div>
+                        </s_guest_container>
+                    </div>
+                </s_guest>
+                <!-- 방명록 끝 -->
+
+                <!-- 본문 시작 -->
+                <s_article_rep>
+
+                    <!-- 인덱스 페이지 시작 -->
+                    <s_index_article_rep>
+                        <div class="index-list-content">
+                            <div class="index-list-content-inner">
+                                <a href="[##_article_rep_link_##]" class="index-inner-left">
+                                    <s_article_rep_thumbnail>
+                                        <div class="rgy-index-img" style="background-image: url('[##_article_rep_thumbnail_url_##]');"></div>
+                                    </s_article_rep_thumbnail>
+                                    <div class="rgy-index-img2" style="background-image: url('./images/ch.png');"></div>
+                                </a>
+                                <div class="index-inner-right">
+                                    <a href="[##_article_rep_link_##]" class="link_post">
+                                        <h3 class="tit_post">[##_article_rep_title_##]</h3>
+                                        <p class="txt_post">[##_article_rep_summary_##]</p>
+                                    </a>
+                                    <div class="detail_info">
+                                        <a href="[##_article_rep_category_link_##]" class="link_cate"><i class="fas fa-network-wired"></i>[##_article_rep_category_##]</a>
+                                        <span class="txt_bar"><i class="far fa-calendar"></i>[##_article_rep_date_##]</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="[##_article_rep_link_##]">
+                                <div class="rgy-index-more">
+                                    <i class="fa fa-reply"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="rgy-index-infeedAdsense">
+                            <script>
+                                if (chInfeedAdSenseShow == 0) {
+                                    chInfeed++;
+                                    if (chInfeed % chInfeedAdSenseInsert == 0) {
+                                        document.write('<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><\/script>');
+                                        document.write(chInfeedAdSense);
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                    }
+                                }
+
+                            </script>
+                        </div>
+
+                    </s_index_article_rep>
+                    <!-- 인덱스 페이지 끝 -->
+
+                    <!-- 퍼머링크 페이지 시작 -->
+                    <s_permalink_article_rep>
+                        <!-- 포스트 상단 (제목/날짜 등) 시작 -->
+                        <div class="titleWrap">
+                            <h2><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h2>
+                            <div class="into_titlewrap">
+                                <div class="category">
+                                    <a href="[##_article_rep_category_link_##]"><i class="fas fa-list"></i>[##_article_rep_category_##]</a>
+                                </div>
+                                <div class="date">
+                                    <i class="far fa-clock"></i>[##_article_rep_date_##]
+                                </div>
+
+                                <!-- 글 관리 기능 (수정 및 삭제 등) -->
+                                <s_ad_div>
+                                    <div class="admin">
+                                        <a href="[##_s_ad_m_link_##]">수정</a>
+                                        <a href="#" onclick="[##_s_ad_m_onclick_##]">수정(새창)</a>
+                                        <a href="#" onclick="[##_s_ad_s2_onclick_##]">[##_s_ad_s2_label_##]</a>
+                                        <a href="#" onclick="[##_s_ad_t_onclick_##]">관련글(트랙백)</a>
+                                        <a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
+                                    </div>
+                                </s_ad_div>
+                                <!-- 글 관리 기능 끝 -->
+
+                            </div>
+                        </div>
+                        <!-- 포스트 상단 끝 -->
+
+                        <!-- 본문내용 시작 -->
+                        <div class="article">
+                            [##_article_rep_desc_##]
+                        </div>
+                        <!-- 본문내용 끝 -->
+
+                        <!-- 본문 아래: 태그, 공유, 관련글, 댓글 시작 -->
+                        <div class="article-bottom">
+
+                            <!-- 태그 시작 -->
+                            <s_tag_label>
+                                <div class="tagTrail">
+                                    <span class="tagText">TAG : </span> [##_tag_label_rep_##]
+                                </div>
+                            </s_tag_label>
+                            <!-- 태그 끝 -->
+
+                            <!-- 본문 공유 시작 -->
+                            <div class="rgyShare">
+                                <h3>이 글을 공유합시다</h3>
+                                <div class="rgyShare-inner">
+                                    <a href="#" target="_blank" onclick="javascript:window.open( 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent( document.URL )+'&t=' + encodeURIComponent( document.title ), 'jb-share-window-facebook', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, width=600, height=600' ); return false;" title="페이스북"><img src="./images/logo_facebook.png" alt="facebook"></a>
+                                    <a href="#" target="_blank" onclick="javascript:window.open( 'https://twitter.com/intent/tweet?text=' + encodeURIComponent( document.title ) + '%20(' + encodeURIComponent( document.URL ) + ')', 'jb-share-window-google-plus', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, width=600, height=600' ); return false;" title="트위터"><img src="./images/logo_twitter.png" alt="twitter"></a>
+                                    <a href="#" target="_blank" onclick="javascript:window.open( 'https://plus.google.com/share?url=' + encodeURIComponent( document.URL ), 'jb-share-window-google-plus', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, width=600, height=600' ); return false;" title="구글플러스"><img src="./images/logo_googleplus.png" alt="googleplus"></a>
+                                    <a href="javascript:ShareKakaoTalk()" title="카카오톡"><img src="./images/logo_kakao.png" alt="kakaoTalk"></a>
+                                    <a href="#" target="_blank" onclick="javascript:window.open( 'https://story.kakao.com/share?url=' + encodeURIComponent( document.URL ), 'jb-share-window-kakostory', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, width=600, height=600' ); return false;" title="카카오스토리"><img src="./images/logo_kakaostory.png" alt="kakaostory"></a>
+                                    <a href="#" target="_blank" onclick="javascript:window.open( 'https://share.naver.com/web/shareView.nhn?url=' + encodeURIComponent( document.URL ) + '&title=' + encodeURIComponent( document.title ), 'jb-share-window-naver', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, width=600, height=600' ); return false;" title="네이버"><img src="./images/logo_naver.png" alt="naver"></a>
+                                    <a href="#" target="_blank" onclick="javascript:window.open( 'https://band.us/plugin/share?url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title), 'naversharedialog', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=600, width=600' ); return false;" title="밴드"><img src="./images/logo_band.png" alt="band"></a>
+                                </div>
+                            </div>
+                            <!-- 본문 공유 끝 -->
+
+                            <!-- 관련글 시작 -->
+                            <s_article_related>
+                                <div class="area_related">
+                                    <strong class="tit_related">'[##_article_rep_category_##]' 의 관련글</strong>
+                                    <ul class="list_related">
+                                        <s_article_related_rep>
+                                            <li class="[##_article_related_rep_type_##]">
+                                                <a href="[##_article_related_rep_link_##]" class="link_related">
+                                                    <div class="link-related-left">
+                                                        <s_article_related_rep_thumbnail>
+                                                            <span class="thumb_related">
+                                                                <div class="thumb-related-img" style="background-image: url('[##_article_related_rep_thumbnail_link_##]');">
+                                                                </div>
+                                                            </span>
+                                                        </s_article_related_rep_thumbnail>
+                                                    </div>
+                                                    <div class="link-related-right">
+                                                        <span class="txt_related">[##_article_related_rep_title_##]</span>
+                                                        <span class="date_related"><i class="far fa-clock"></i>[##_article_related_rep_date_##]</span>
+                                                    </div>
+                                                    <div class="link-more">더보기</div>
+                                                </a>
+                                            </li>
+                                        </s_article_related_rep>
+                                    </ul>
+                                </div>
+                            </s_article_related>
+                            <!-- 관련글 끝 -->
+
+                            <!-- 댓글 갯수 시작 -->
+                            <div class="re-count">
+                                <span class="addcomment">
+                                    <a href="#rp" onclick="[##_article_rep_rp_link_##]">댓글<s_rp_count><span class="cnt">([##_article_rep_rp_cnt_##])</span></s_rp_count></a>
+                                </span>
+                            </div>
+                            <!-- 댓글 갯수 끝 -->
+
+                            <!-- 댓글 시작 -->
+                            <s_rp>
+                                <div class="comment">
+                                    <div class="comment-h3">
+                                        <h3><span style="color:#FF5544; font-weight:bold;">본문과 관련 있는 내용</span>으로 댓글을 남겨주시면 감사하겠습니다.</h3>
+                                    </div>
+                                    <!-- 댓글 남기기 시작 -->
+                                    <s_rp_input_form>
+                                        <div class="commentWrite">
+                                            <s_rp_member>
+                                                <s_rp_guest>
+                                                    <div class="re3-options">
+                                                        <p class="re-name">
+                                                            <label for="name"></label>
+                                                            <input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" placeholder="이름" onfocus="this.placeholder=''" onblur="this.placeholder='이름'">
+                                                        </p>
+                                                        <p class="re-password">
+                                                            <label for="password"></label>
+                                                            <input type="password" maxlength="8" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]" placeholder="비밀번호" onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호'">
+                                                        </p>
+                                                        <p class="re-homepage">
+                                                            <label for="homepage"></label>
+                                                            <input type="text" class="homepage" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]">
+                                                        </p>
+                                                    </div>
+                                                </s_rp_guest>
+                                                <p class="CommentSecretWrap">
+                                                    <input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox"><label for="secret">비밀글</label><span class="rgyCommentSecretCheck">잠깐! 비밀로 남겨야 할 만한 내용인가요? 그렇다면 차라리 이메일을 보내주시기 바랍니다.</span>
+                                                </p>
+                                            </s_rp_member>
+                                            <p>
+                                                <textarea name="[##_rp_input_comment_##]" rows="10" cols="50"></textarea>
+                                            </p>
+                                            <p>
+                                                <input class="reBtn" type="submit" value="댓글 남기기" onclick="[##_rp_onclick_submit_##]" />
+                                            </p>
+                                        </div>
+                                    </s_rp_input_form>
+                                    <!-- 댓글 남기기 끝 -->
+
+                                    <!-- 댓글 리스트 시작 -->
+                                    <div class="commentList">
+                                        <s_rp_container>
+                                            <ol class="rgy-reply">
+                                                <s_rp_rep>
+                                                    <li id='[##_rp_rep_id_##]'>
+                                                        <div class="rgy-rewrite-window">
+                                                            <div class="[##_rp_rep_class_##]">
+                                                                <div class="rgy-rewrite-window-top">
+                                                                    <div class="rgy-rewrite-img">
+                                                                        <span class="image"><img src="[##_rp_rep_logo_##]" class="re-image"></span>
+                                                                    </div>
+                                                                    <div class="rgy-rewrite-info">
+                                                                        <span class="re-name">[##_rp_rep_name_##]</span>
+                                                                        <span class="re-date"> [##_rp_rep_date_##]</span>
+                                                                    </div>
+                                                                </div>
+                                                                <p>[##_rp_rep_desc_##]</p>
+                                                                <span class="re-control">
+                                                                    <div class="re-btn">
+                                                                        <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">
+                                                                            <span>수정/삭제</span>
+                                                                        </a>
+                                                                        <a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write">
+                                                                            <span>댓글쓰기</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <s_rp2_container>
+                                                            <ul>
+                                                                <s_rp2_rep>
+                                                                    <li id='[##_rp_rep_id_##]'>
+                                                                        <div class="rgy-rewrite-window rgy-rewrite-window2">
+                                                                            <div class="rgy-div-re-icon"><i class="fas fa-check"></i></div>
+                                                                            <div class="[##_rp_rep_class_##]">
+                                                                                <div class="rgy-rewrite-window-top">
+                                                                                    <div class="rgy-rewrite-img">
+                                                                                        <span class="image"><img src="[##_rp_rep_logo_##]" class="re-image"></span>
+                                                                                    </div>
+                                                                                    <div class="rgy-rewrite-info">
+                                                                                        <span class="re-name">[##_rp_rep_name_##]</span>
+                                                                                        <span class="re-date"> [##_rp_rep_date_##]</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <p>[##_rp_rep_desc_##]</p>
+                                                                                <span class="re-control">
+                                                                                    <div class="re-btn">
+                                                                                        <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">
+                                                                                            <span>수정/삭제</span>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </s_rp2_rep>
+                                                            </ul>
+                                                        </s_rp2_container>
+                                                    </li>
+                                                </s_rp_rep>
+                                            </ol>
+                                        </s_rp_container>
+                                    </div>
+                                    <!-- 댓글 리스트 끝 -->
+                                </div>
+                            </s_rp>
+                            <!-- 댓글 끝 -->
+                        </div>
+                        <!-- 본문 아래: 태그, 공유, 관련글, 댓글 끝 -->
+
+                    </s_permalink_article_rep>
+                    <!-- 퍼머링크 끝 -->
+
+                </s_article_rep>
+                <!-- 본문 끝 -->
+
+                <!-- 페이징 시작 -->
+                <s_paging>
+                    <div class="paging-wrap">
+                        <div class="paging">
+                            <a [##_prev_page_##] class="[##_no_more_prev_##]">◀</a>
+                            <span class="numbox">
+                                <s_paging_rep>
+                                    <a [##_paging_rep_link_##] class="num">[##_paging_rep_link_num_##]</a>
+                                </s_paging_rep>
+                            </span>
+                            <a [##_next_page_##] class="[##_no_more_next_##]">▶</a>
+                        </div>
+                    </div>
+                </s_paging>
+                <!-- 페이징 끝 -->
+
+            </div>
+            <!-- 콘텐츠 영역 끝 -->
+
+            <!-- 사이드바 시작 -->
+            <div id="sidebar">
+                <aside>
+                    <s_sidebar>
+
+                        <s_sidebar_element>
+                            <!--공지사항-->
+                            <s_rct_notice>
+                                <div class="notice rgy-sidebar-title rgy-sidebar-content">
+                                    <h3 class="title">공지사항</h3>
+                                    <ul>
+                                        <s_rct_notice_rep>
+                                            <li>
+                                                <a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a>
+                                            </li>
+                                        </s_rct_notice_rep>
+                                    </ul>
+                                </div>
+                            </s_rct_notice>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--블로그정보-->
+                            <div class="blogInfo rgy-sidebar-title rgy-sidebar-content">
+                                <h3>블로그정보</h3>
+                                <ul>
+                                    <li>
+                                        <img class="blogInfoImg" src="[##_image_##]" alt="블로그 이미지">
+                                    </li>
+                                    <li class="blogInfo-text">
+                                        <p>[##_blogger_##]</p>
+                                        <p>[##_desc_##]</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--추천글-->
+                            <div class="rgy-sidebar-title rgy-sidebar-content-recommend">
+                                <h3>추천글</h3>
+                                <ul>
+                                    <li><a href="/" target="_blank">제목을 입력하세요<span class="rgyBadge"></span></a></li>
+                                    <li><a href="/" target="_blank">제목을 입력하세요<span class="rgyBadge"></span></a></li>
+                                    <li><a href="/" target="_blank">제목을 입력하세요</a></li>
+                                    <li><a href="/" target="_blank">제목을 입력하세요</a></li>
+                                    <li><a href="/" target="_blank">제목을 입력하세요</a></li>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--카테고리 바로가기 모듈-->
+                            <div id="rgyCategory"></div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--카테고리-->
+                            <div class="aside_category rgy-sidebar-title">
+                                <h3>카테고리</h3>
+                                [##_category_list_##]
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--인기글-->
+                            <div class="popularPost rgy-sidebar-title rgy-sidebar-content">
+                                <h3>인기글</h3>
+                                <ul>
+                                    <s_rctps_popular_rep>
+                                        <li>
+                                            <a href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
+                                        </li>
+                                    </s_rctps_popular_rep>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--최근글-->
+                            <div class="recentPost rgy-sidebar-title rgy-sidebar-content">
+                                <h3>최근글</h3>
+                                <ul>
+                                    <s_rctps_rep>
+                                        <li>
+                                            <a href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
+                                        </li>
+                                    </s_rctps_rep>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--최근댓글-->
+                            <div class="recentComment rgy-sidebar-title rgy-sidebar-content">
+                                <h3>최근댓글</h3>
+                                <ul id="recentComments">
+                                    <s_rctrp_rep>
+                                        <li>
+                                            <a href="[##_rctrp_rep_link_##]">[##_rctrp_rep_desc_##]</a>
+                                        </li>
+                                    </s_rctrp_rep>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--태그목록-->
+                            <div class="tagbox rgy-sidebar-title">
+                                <h3>태그목록</h3>
+                                <ul>
+                                    <s_random_tags>
+                                        <li>
+                                            <a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##]</a>
+                                        </li>
+                                    </s_random_tags>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--달력-->
+                            <div class="calendar rgy-sidebar-title rgy-sidebar-content">
+                                <h3>달력</h3>
+                                <div class="calendar-inner">
+                                    [##_calendar_##]
+                                </div>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--글보관함-->
+                            <div class="archive rgy-sidebar-title rgy-sidebar-content">
+                                <h3>글보관함</h3>
+                                <ul>
+                                    <s_archive_rep>
+                                        <li>
+                                            <a href="[##_archive_rep_link_##]">
+                                                <span class="archive-date">[##_archive_rep_date_##]</span>([##_archive_rep_count_##])
+                                            </a>
+                                        </li>
+                                    </s_archive_rep>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--방문자-->
+                            <div class="counter rgy-sidebar-title rgy-sidebar-content">
+                                <h3>방문자</h3>
+                                <ul>
+                                    <li class="rgy-counter-list">
+                                        <span class="yesterday">Yesterday : [##_count_yesterday_##]</span>
+                                    </li>
+                                    <li class="rgy-counter-list">
+                                        <span class="today">Today : [##_count_today_##]</span>
+                                    </li>
+                                    <li class="rgy-counter-list">
+                                        <span class="total">Total : [##_count_total_##]</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                    </s_sidebar>
+                </aside>
+            </div>
+            <!-- 사이드바 끝 -->
+
+        </div>
+        <!-- 콘테이너: 사이드바 + 본문 끝 -->
+
+        <!-- 최하단 애드센스 시작 -->
+        <!--<div id="bottomAdss">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle" style="display: block;" data-ad-client="●" data-ad-slot="■" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>-->
+        <!-- 최하단 애드센스 끝 -->
+
+        <!-- 최하단 빈공간 시작 -->
+        <div id="bottomEmpty"></div>
+        <!-- 최하단 빈공간 끝 -->
+
+
+        <!-- 푸터 시작 -->
+        <footer>
+            <div id="footer">
+                <p class="copyright">Copyright &copy; <a href="/">[##_blogger_##]</a>. All Right Reserved.</p>
+                <p class="designby">Design by <a href="https://rgy0409.tistory.com" target="_blank">친절한효자손</a></p>
+            </div>
+        </footer>
+        <!-- 푸터 끝 -->
+
+        <script>
+            function fnLoginToggle() {};
+            $(function() {
+                if (window.T.config.USER.name) {
+                    $('#tab_login_toggle').html('<i class="fas fa-unlock" title="로그아웃"></i>');
+                    fnLoginToggle = function() {
+                        document.location.href = "https://www.tistory.com/auth/logout?redirectUrl=" + encodeURIComponent(window.location.href);
+                    };
+                } else {
+                    $('#tab_login_toggle').html('<i class="fas fa-lock" title="로그인"></i>');
+                    fnLoginToggle = function() {
+                        document.location.href = "https://www.tistory.com/auth/login?redirectUrl=" + encodeURIComponent(window.location.href);
+                    };
+                }
+            });
+        </script>
+
+        <!-- TOP 버튼 + 글쓰기 관리자 카테고리 시작 -->
+        <div id="topBtn">
+            <ul>
+                <li>
+                    <a class="rgyWrite" href="/admin/entry/post"><i class="fas fa-pen-nib"></i></a>
+                    <div class="topBtn-exp">
+                        <div class="topBtn-exp1">글쓰기</div>
+                        <div class="topBtn-exp2"></div>
+                    </div>
+                </li>
+                <li>
+                    <a class="rgyManage" href="/manage"><i class="fas fa-tools"></i></a>
+                    <div class="topBtn-exp">
+                        <div class="topBtn-exp1">관리자</div>
+                        <div class="topBtn-exp2"></div>
+                    </div>
+                </li>
+                <li>
+                    <a class="rgyManage" href="#rgyCategory"><i class="fas fa-bookmark"></i></a>
+                    <div class="topBtn-exp">
+                        <div class="topBtn-exp1">카테고리</div>
+                        <div class="topBtn-exp2"></div>
+                    </div>
+                </li>
+                <li>
+                    <a class="rgyTop"><i class="fas fa-angle-double-up"></i></a>
+                    <div class="topBtn-exp">
+                        <div class="topBtn-exp1">맨위로</div>
+                        <div class="topBtn-exp2"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- TOP 버튼 + 글쓰기 관리자 카테고리 끝 -->
+
+    </s_t3>
+</body>
+
+</html>
+
+
+<!--
+    블로그 : https://rgy0409.tistory.com
+    e-mail : rgy0409@gmail.com
+-->
